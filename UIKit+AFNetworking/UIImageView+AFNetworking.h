@@ -60,6 +60,9 @@
  @param url The URL used for the image request.
  */
 - (void)setImageWithURL:(NSURL *)url;
+- (void)setImageWithURL:(NSURL *)url
+                success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
+                failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error))failure;
 
 /**
  Asynchronously downloads an image from the specified URL, and sets it once the request is finished. Any previous image request for the receiver will be cancelled. 
